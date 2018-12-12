@@ -47,9 +47,10 @@
 
 			<div class="wrap_header">
 				<!-- Logo -->
-				<h1><a href="index.html" class="logo">
+				<h1><a href="{{route('home')}}" class="logo">
                     <font color="0C2E8A">Tebu</font><font color="50d8af">Wacana</font>
-                    </a></h1>
+                    </a>
+				</h1>
 
 				<!-- Menu -->
 				<div class="wrap_menu">
@@ -74,80 +75,10 @@
 
 					<div class="header-wrapicon2">
 						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
+						<!-- <span class="header-icons-noti">0</span> -->
 
 						<!-- Header cart noti -->
-						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem">
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-01.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											White Shirt With Pleat Detail Back
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $19.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-02.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Converse All Star Hi Black Canvas
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Nixon Porter Leather Watch In Tan
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-									</div>
-								</li>
-							</ul>
-
-							<div class="header-cart-total">
-								Total: $75.00
-							</div>
-
-							<div class="header-cart-buttons">
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart
-									</a>
-								</div>
-
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
-									</a>
-								</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -174,78 +105,7 @@
 						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
 						<span class="header-icons-noti">0</span>
 
-						<!-- Header cart noti -->
-						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem">
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-01.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											White Shirt With Pleat Detail Back
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $19.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-02.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Converse All Star Hi Black Canvas
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Nixon Porter Leather Watch In Tan
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-									</div>
-								</li>
-							</ul>
-
-							<div class="header-cart-total">
-								Total: $75.00
-							</div>
-
-							<div class="header-cart-buttons">
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart
-									</a>
-								</div>
-
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
-									</a>
-								</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 
@@ -335,10 +195,10 @@
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+				<!-- <div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
 					<div class="leftbar p-r-20 p-r-0-sm">
 						<!--  -->
-						<h4 class="m-text14 p-b-7">
+						<!-- <h4 class="m-text14 p-b-7">
 							Categories
 						</h4>
 
@@ -372,10 +232,10 @@
 									Accesories
 								</a>
 							</li>
-						</ul>
+						</ul> -->
 
 						<!--  -->
-						<h4 class="m-text14 p-b-32">
+						<!-- <h4 class="m-text14 p-b-32">
 							Filters
 						</h4>
 
@@ -390,7 +250,7 @@
 
 							<div class="flex-sb-m flex-w p-t-16">
 								<div class="w-size11">
-									<!-- Button -->
+									<!-- Button
 									<button class="flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4">
 										Filter
 									</button>
@@ -443,9 +303,9 @@
 									<label class="color-filter color-filter7" for="color-filter7"></label>
 								</li>
 							</ul>
-						</div>
+						</div> -->
 
-						<div class="search-product pos-relative bo4 of-hidden">
+						<!-- <div class="search-product pos-relative bo4 of-hidden">
 							<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products...">
 
 							<button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
@@ -453,12 +313,12 @@
 							</button>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 				<div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
 					<!--  -->
-					<div class="flex-sb-m flex-w p-b-35">
-						<div class="flex-w">
+					<!-- <div class="flex-sb-m flex-w p-b-35">
+						<!-- <div class="flex-w">
 							<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
 								<select class="selection-2" name="sorting">
 									<option>Default Sorting</option>
@@ -479,22 +339,23 @@
 
 								</select>
 							</div>
-						</div>
+						</div> -->
 
-						<span class="s-text8 p-t-5 p-b-5">
+						<!-- <span class="s-text8 p-t-5 p-b-5">
 							Showing 1–12 of 16 results
 						</span>
-					</div>
+					</div> -->
 
 					<!-- Product -->
-					<div class="row">
+					<br></br>
+					<div class="col">
 						
 						@foreach($menus as $menu)
 						<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
 							<!-- Block2 -->
-							<div class="block2">
-								<div class="block2-img wrap-pic-w of-hidden pos-relative">
-									<img src="../storage/{{$menu->gambar}}" alt="IMG-PRODUCT">
+							<div class="card text-center">
+								<div class="card-body">
+									<img src="../storage/{{$menu->gambar}}" alt="IMG-PRODUCT" height="128px">
 
 									<div class="block2-overlay trans-0-4">
 										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -504,9 +365,9 @@
 
 										<div class="block2-btn-addcart w-size1 trans-0-4">
 											<!-- Button -->
-											<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+											<a href="{{route('menu.detail',$menu)}}" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
 												Add to Cart
-											</button>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -526,11 +387,12 @@
 					</div>
 
 					<!-- Pagination -->
-					<div class="pagination flex-m flex-w p-t-26">
+					
+				</div>
+			</div>
+			<div class="pagination flex-m flex-w p-t-26 pull-right">
 						<a href="#" class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
 						<a href="#" class="item-pagination flex-c-m trans-0-4">2</a>
-					</div>
-				</div>
 			</div>
 		</div>
 	</section>
@@ -747,21 +609,21 @@
 	<script type="text/javascript" src="js/slick-custom.js"></script>
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		$('.block2-btn-addcart').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
 			$(this).on('click', function(){
 				swal(nameProduct, "is added to cart !", "success");
 			});
 		});
-
+		
 		$('.block2-btn-addwishlist').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
 			$(this).on('click', function(){
 				swal(nameProduct, "is added to wishlist !", "success");
 			});
 		});
-	</script>
+	</script> -->
 
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/noui/nouislider.min.js"></script>

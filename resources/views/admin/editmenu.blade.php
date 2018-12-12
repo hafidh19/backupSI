@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
-    <link rel="stylesheet" href="../../assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -79,8 +79,8 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img src="../../images/logofix.png" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="./"><img src="../../images/logo2.png" alt="Logo"></a>
+                    <a class="navbar-brand" href="./"><img src="../../../images/logofix.png" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="./"><img src="../../../images/logo2.png" alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>
@@ -125,7 +125,7 @@
                             <div class="dropdown-menu" aria-labelledby="message">
                                 <p class="red">You have 4 Mails</p>
                                 <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="../../images/avatar/1.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="../../../images/avatar/1.jpg"></span>
                                     <div class="message media-body">
                                         <span class="name float-left">Jonathan Smith</span>
                                         <span class="time float-right">Just now</span>
@@ -133,7 +133,7 @@
                                     </div>
                                 </a>
                                 <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="../../images/avatar/2.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="../../../images/avatar/2.jpg"></span>
                                     <div class="message media-body">
                                         <span class="name float-left">Jack Sanders</span>
                                         <span class="time float-right">5 minutes ago</span>
@@ -141,7 +141,7 @@
                                     </div>
                                 </a>
                                 <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="../../images/avatar/3.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="../../../images/avatar/3.jpg"></span>
                                     <div class="message media-body">
                                         <span class="name float-left">Cheryl Wheeler</span>
                                         <span class="time float-right">10 minutes ago</span>
@@ -149,7 +149,7 @@
                                     </div>
                                 </a>
                                 <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="../../images/avatar/4.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="../../../images/avatar/4.jpg"></span>
                                     <div class="message media-body">
                                         <span class="name float-left">Rachel Santos</span>
                                         <span class="time float-right">15 minutes ago</span>
@@ -162,7 +162,7 @@
 
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="../../images/admin.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="../../../images/admin.jpg" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -220,8 +220,9 @@
                                 <strong>Upload Menu Baru</strong>
                             </div>
                             <div class="card-body card-block">
-                            <form class="" action="{{ route('menu.store') }}" method="post" enctype="multipart/form-data">
+                            <form class="" action="{{ route('menu.update',$menu) }}" method="post" enctype="multipart/form-data">
                              {{csrf_field()}}
+                             {{method_field('PATCH')}}
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label class=" form-control-label">Nama Admin</label></div>
                                         <div class="col-12 col-md-9">
@@ -236,7 +237,7 @@
                                     </div>
                                     <div class="row form-group has-feedback{{ $errors->has('nbarang') ? ' is-invalid' : '' }}">
                                         <div class="col col-md-3"><label for="">Nama Menu</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" class="form-control" name="nbarang" value="{{ old('nbarang') }}" required autofocus></div>
+                                        <div class="col-12 col-md-9"><input type="text" class="form-control" name="nbarang" value="{{ $menu->nbarang }}" required autofocus></div>
                                         <div class="col-md-6">
                                             @if ($errors->has('nbarang'))
                                                 <span class="invalid-feedback">
@@ -247,7 +248,7 @@
                                     </div>
                                     <div class="row form-group has-feedback{{ $errors->has('hbarang') ? ' is-invalid' : '' }}">
                                     <div class="col col-md-3"><label for="">Harga</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" class="form-control" name="hbarang" value="{{ old('hbarang') }}" required autofocus></div>
+                                        <div class="col-12 col-md-9"><input type="text" class="form-control" name="hbarang" value="{{ $menu->hbarang }}" required autofocus></div>
                                         <div class="col-md-6">
                                             @if ($errors->has('hbarang'))
                                                 <span class="invalid-feedback">
@@ -257,7 +258,12 @@
                                         </div>                                    </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Deskripsi</label></div>
-                                        <div class="col-12 col-md-9"><textarea name="deskripsi"  rows="9" placeholder="Deskripsi..." class="form-control"></textarea></div>
+                                        <div class="col-12 col-md-9"><textarea name="deskripsi"  rows="9"  class="form-control">{{$menu->deskripsi}}</textarea></div>
+                                        @if ($errors->has('deskripsi'))
+                                            <span class="invalid-feedback">
+                                                <strong>{{ $errors->first('deskripsi') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                         
                                     
@@ -266,10 +272,15 @@
                                         <div class="col col-md-3"><label for="file-input" class=" form-control-label">Gambar</label></div>
                                         <div class="col-12 col-md-9"><input type="file" id="file-input" name="file-input" class="form-control-file"></div>
                                     </div> -->
-                                    
+                                    <img src="../../../storage/{{$menu->gambar}}" alt="Gambar" height="128">
                                     <div class="form-group">
                                         <div class="input-field">
-                                            <input type="file" name="gambar" class="validate{{ $errors->has('gambar') ? ' is-invalid' : '' }}"  value="{{ old('gambar') }}" required autofocus >
+                                            <input type="file" name="gambar" class="validate{{ $errors->has('gambar') ? ' is-invalid' : '' }}"  value="{{ $menu->gambar }}" required autofocus >
+                                            @if ($errors->has('gambar'))
+                                                <span class="invalid-feedback">
+                                                    <strong>{{ $errors->first('gambar') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
                                     </div>
                             

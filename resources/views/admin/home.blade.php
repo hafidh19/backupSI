@@ -86,9 +86,10 @@
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Manage Toko</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{route('admin.toko')}}">Basic Form</a>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{route('admin.toko')}}">Menu</a>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{route('menu.create')}}">Tambah Menu</a>
                         </ul>
                     </li>
 

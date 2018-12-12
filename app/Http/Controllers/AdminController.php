@@ -29,8 +29,9 @@ class AdminController extends Controller
     }
 
     public function toko()
-    {
-        return view('admin.toko');
+    {   
+        $menus=Menu::all();
+        return view('admin.toko',compact('menus'));
     }
 
     public function create(){
@@ -51,11 +52,52 @@ class AdminController extends Controller
             'nbarang'=>request('nbarang'),
             'hbarang'=>request('hbarang'),
             'deskripsi'=>request('deskripsi'),
-            $gambar=$request->file('gambar')->store('gambars'),
-            'gambar'=>$gambar,
+            $gambar=$request->file('gambar'),
+            $fileNama=$gambar->getClientOriginalName(),
+            $request->file('gambar')->move("storage/",$fileNama),
+            'gambar'=>$fileNama,
             'admin_id'=>request('admin_id')
         ]);
             
-        return redirect('/admin/toko')->with('success','Data Berhasil Ditambahkan');
+        return redirect('/admin/toko')->with('success','Menu Berhasil Ditambahkan');
     }
+
+    public function edit($id)
+    {
+        
+        $admins = Admin::all();
+        $menu = Menu::find($id);
+        return view('admin.editmenu', compact('menu','admins'));
+    }
+
+    public function update($id,Request $request)
+    {   
+        $this->validate(request(),[
+            'nbarang'=>'required',
+            'hbarang'=>'required|numeric',
+            'deskripsi'=>'required',
+            'gambar'=>'required|image',
+        ]);      
+
+        $menu = Menu::find($id);
+        $admins = Admin::all();
+        $menu -> update([
+            'nbarang'=>request('nbarang'),
+            'hbarang'=>request('hbarang'),
+            'deskripsi'=>request('deskripsi'),
+            $gambar=$request->file('gambar'),
+            $fileNama=$gambar->getClientOriginalName(),
+            $request->file('gambar')->move("storage/",$fileNama),
+            'gambar'=>$fileNama,
+            'admin_id'=>request('admin_id')
+        ]);
+        return redirect('/admin/toko')->with('success','Menu Berhasil Di Edit');
+    }
+
+    public function destroy($id){
+        $menu = Menu::find($id);
+        $menu->delete();
+        return redirect('/admin/toko')->with('danger','Menu Berhasil Di Delete');
+    }
+
 }

@@ -25,6 +25,17 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+    <style>
+    table {
+    counter-reset: tableCount;     
+    }
+
+    .counterCell:before {              
+        content: counter(tableCount); 
+        counter-increment: tableCount; 
+    }
+    </style>
+    
 
 </head>
 <body>
@@ -36,7 +47,7 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="{{route('admin.home')}}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
                     <li class="menu-title">UI elements</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
@@ -46,11 +57,11 @@
                             <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item-has-children active dropdown">
+                    <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Manage Toko</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Menu</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Tambah Menu</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{route('admin.toko')}}">Menu</a>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{route('menu.create')}}">Tambah Menu</a>
                         </ul>
                     </li>
 
@@ -160,6 +171,7 @@
                         </div>
                     </div>
 
+                    
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="user-avatar rounded-circle" src="../images/admin.jpg" alt="User Avatar">
@@ -207,7 +219,51 @@
             </div>
         </div>
         </div>
-       
+
+        <br></br>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-2">
+                        
+                        <!-- <table style="width:100%">
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama Menu</th>
+                                <th>Harga Menu</th></tr> -->
+                               
+                                @foreach($menus as $menu)                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        {{$menu->nbarang}}
+                                    
+
+                                        <div class="pull-right">
+                    
+                                            <form class="" action="{{ route('menu.destroy',$menu)}}" method="post">
+                                                {{csrf_field()}}
+                                                {{method_field('DELETE')}}
+                                                <a href={{ route('menu.edit',$menu)}} class="btn btn-xs btn-primary">Edit</a>
+
+                                                <button type="submit" class="btn btn-xs btn-danger">Hapus</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class"panel-body">
+                                        <p>Rp. {{$menu->hbarang}}</p>
+                                    </div>
+
+                                </div>
+                                   
+                                @endforeach
+
+                            
+                        <!--     -->
+                        
+                    </div>
+                </div>
+            </div>
 
         
                         

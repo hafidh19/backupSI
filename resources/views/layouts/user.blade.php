@@ -49,6 +49,11 @@
                                 @endif
                             </li>
                         @else
+                        <div class="header-wrapicon2">
+                            <a href="#">
+                                <img src="../images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                            </a>
+                        </div>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
